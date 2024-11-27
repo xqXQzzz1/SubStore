@@ -124,12 +124,7 @@ proxies:
     udp: true
 
 # 锚点
-pr:
-  &pr {
-    type: select,
-    proxies: [🟢 直连, ♻️ 自动选择, 🚫 拒绝],
-    include-all: true,
-  }
+pr: &pr { type: select, proxies: [♻️ 自动选择], include-all: true }
 # 策略组
 # https://wiki.metacubex.one/config/proxy-groups/
 proxy-groups:
