@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "机场订阅"
+    url: "机场订阅2xhg"
 
 # 用于下载订阅时指定UA
 global-ua: clash.meta
@@ -70,16 +70,16 @@ sniffer:
     - "+.apple.com"
 
 # 代理模式
-# tun:
-#   enable: true
-#   stack: mixed
-#   mtu: 9000
-#   dns-hijack:
-#     - "any:53"
-#     - "tcp://any:53"
-#   auto-route: true
-#   auto-redirect: true
-#   auto-detect-interface: true
+tun:
+  enable: false
+  stack: mixed
+  mtu: 9000
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
 
 # DNS模块
 dns:
@@ -127,7 +127,7 @@ proxies:
 pr:
   &pr {
     type: select,
-    proxies: [🚀 节点选择, ♻️ 自动选择, 🟢 直连, 🚫 拒绝],
+    proxies: [🟢 直连, ♻️ 自动选择, 🚫 拒绝],
     include-all: true,
   }
 # 策略组
@@ -144,12 +144,7 @@ proxy-groups:
       include-all: true,
       filter: '^[A-z]\+?\.(\[[0-3](\.\d+)?[xX倍]\]\.?)?[A-z]{2,}.*$',
     }
-  - {
-      name: 🚀 节点选择,
-      type: select,
-      proxies: [♻️ 自动选择, 🟢 直连, 🚫 拒绝],
-      include-all: true,
-    }
+  - { name: 🚀 节点选择, <<: *pr }
   - { name: 🌍 国外媒体, <<: *pr }
   - { name: 📲 社交软件, <<: *pr }
   - { name: Ⓜ️ 微软云盘, <<: *pr }
