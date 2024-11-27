@@ -127,7 +127,8 @@ proxies:
 pr:
   &pr {
     type: select,
-    proxies: [🚀 节点选择, ♻️ 自动选择, 🟢 直连, 🚫 拒绝, 🌐 全部节点],
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🟢 直连, 🚫 拒绝],
+    include-all: true,
   }
 # 策略组
 # https://wiki.metacubex.one/config/proxy-groups/
@@ -143,16 +144,21 @@ proxy-groups:
       include-all: true,
       filter: '^[A-z]\+?\.(\[[0-3](\.\d+)?[xX倍]\]\.?)?[A-z]{2,}.*$',
     }
-  - { name: 🚀 节点选择, <<: *pr }
+  - {
+      name: 🚀 节点选择,
+      type: select,
+      proxies: [♻️ 自动选择, 🟢 直连, 🚫 拒绝],
+      include-all: true,
+    }
   - { name: 🌍 国外媒体, <<: *pr }
-  - { name: 🍀 Google, <<: *pr }
   - { name: 📲 社交软件, <<: *pr }
+  - { name: Ⓜ️ 微软云盘, <<: *pr }
   - { name: Ⓜ️ 微软服务, <<: *pr }
   - { name: 🎮 游戏论坛, <<: *pr }
   - { name: 🎮 游戏代理, <<: *pr }
   - { name: 🧱 砖块代理, <<: *pr }
   - { name: 🐟 漏网之鱼, <<: *pr }
-  - { name: 🌐 全部节点, type: select, include-all: true }
+  - { name: 🌐 全部节点, type: select }
   - { name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择] }
 rules:
   - RULE-SET,owngame,🎮 游戏代理
@@ -299,4 +305,9 @@ rule-providers:
     {
       <<: *ip,
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs",
+    }
+  private_domain:
+    {
+      <<: *domain,
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs",
     }
