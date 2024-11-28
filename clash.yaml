@@ -2,11 +2,11 @@
 proxy-providers:
   Airport_01:
     type: http
-    interval: 1800
+    interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 300
+      interval: 43200
     proxy: 🟢 直连
     url: "oldurl"
 
@@ -133,7 +133,7 @@ proxy-groups:
       type: url-test,
       lazy: false,
       url: http://www.google.com/generate_204,
-      interval: 1800,
+      interval: 3600,
       tolerance: 100,
       disable-udp: false,
       include-all: true,
