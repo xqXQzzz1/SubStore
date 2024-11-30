@@ -159,21 +159,24 @@ rules:
   - RULE-SET,ownmedia,🌍 国外媒体
   - RULE-SET,ownproxy,🚀 节点选择
   - RULE-SET,private_domain,🟢 直连
-  - RULE-SET,ai,🤖 ChatGPT
-  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
-  - RULE-SET,TikTok_No_Resolve,🌍 国外媒体,no-resolve
   - RULE-SET,SteamCN_No_Resolve,🟢 直连
   - RULE-SET,Steam_No_Resolve,🎮 游戏论坛
   - RULE-SET,Steam,🎮 游戏论坛
+  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘
   - RULE-SET,Porn,🌍 国外媒体
+  - RULE-SET,TikTok_No_Resolve,🌍 国外媒体
   - RULE-SET,GlobalMedia_Classical_No_Resolve,🌍 国外媒体
+  - RULE-SET,netflix_ip,🌍 国外媒体,no-resolve
   - RULE-SET,Telegram_No_Resolve,📲 社交软件
   - RULE-SET,Twitter_No_Resolve,📲 社交软件
   - RULE-SET,Instagram_No_Resolve,📲 社交软件
   - RULE-SET,Facebook_No_Resolve,📲 社交软件
+  - RULE-SET,telegram_ip,📲 社交软件,no-resolve
   - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,Proxy_Classical,🚀 节点选择,no-resolve
+  - RULE-SET,Proxy_Classical,🚀 节点选择
+  - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 rule-anchor:
@@ -258,7 +261,7 @@ rule-providers:
   OneDrive_No_Resolve:
     {
       <<: *class,
-      url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OneDrive/OneDrive_No_Resolve.yaml",
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive_No_Resolve.yaml",
     }
   Porn:
     {
@@ -268,7 +271,7 @@ rule-providers:
   GlobalMedia_Classical_No_Resolve:
     {
       <<: *class,
-      url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/GlobalMedia/GlobalMedia_Classical_No_Resolve.yaml",
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical_No_Resolve.yaml",
     }
   Telegram_No_Resolve:
     {
@@ -309,4 +312,14 @@ rule-providers:
     {
       <<: *ip,
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs",
+    }
+  telegram_ip:
+    {
+      <<: *ip,
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs",
+    }
+  netflix_ip:
+    {
+      <<: *ip,
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs",
     }
