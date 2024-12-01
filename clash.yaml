@@ -325,10 +325,10 @@ rule-providers:
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs",
     }
   GameDownload_No_Resolve:
-  {
+    {
       <<: *class,
       url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownload/GameDownload_No_Resolve.yaml",
-  }
+    }
   Epic_No_Resolve:
     {
       <<: *class,
