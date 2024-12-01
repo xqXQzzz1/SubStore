@@ -159,12 +159,13 @@ rules:
   - RULE-SET,ownmedia,🌍 国外媒体
   - RULE-SET,ownproxy,🚀 节点选择
   - RULE-SET,private_domain,🟢 直连
+  - RULE-SET,GameDownload_No_Resolve,🟢 直连
   - RULE-SET,SteamCN_No_Resolve,🟢 直连
   - RULE-SET,Steam_No_Resolve,🎮 游戏论坛
-  - RULE-SET,Steam,🎮 游戏论坛
+  - RULE-SET,Epic_No_Resolve,🎮 游戏论坛
   - RULE-SET,ai,🤖 ChatGPT
-  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘
+  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,Porn,🌍 国外媒体
   - RULE-SET,TikTok_No_Resolve,🌍 国外媒体
   - RULE-SET,GlobalMedia_Classical_No_Resolve,🌍 国外媒体
@@ -230,8 +231,8 @@ rule-providers:
     }
   microsoft_domain:
     {
-      <<: *domain,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs",
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml",
     }
   ai:
     {
@@ -322,4 +323,14 @@ rule-providers:
     {
       <<: *ip,
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs",
+    }
+  GameDownload_No_Resolve:
+  {
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownload/GameDownload_No_Resolve.yaml",
+  }
+  Epic_No_Resolve:
+    {
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic_No_Resolve.yaml",
     }
