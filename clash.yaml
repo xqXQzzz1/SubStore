@@ -163,6 +163,8 @@ rules:
   - RULE-SET,GameDownloadCN_No_Resolve,🟢 直连
   - RULE-SET,Steam_No_Resolve,🎮 游戏论坛
   - RULE-SET,Epic_No_Resolve,🎮 游戏论坛
+  - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT
+  - RULE-SET,BardAI_No_Resolve,🤖 ChatGPT
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
@@ -238,6 +240,16 @@ rule-providers:
     {
       <<: *classt,
       url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/AI.list",
+    }
+  Copilot_No_Resolve:
+    {
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Copilot/Copilot_No_Resolve.yaml",
+    }
+  BardAI_No_Resolve:
+    {
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BardAI/BardAI_No_Resolve.yaml",
     }
   TikTok_No_Resolve:
     {
