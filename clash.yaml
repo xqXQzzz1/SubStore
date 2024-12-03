@@ -119,12 +119,14 @@ proxies:
   - name: "🟢 直连"
     type: direct
     udp: true
-  - name: "🚫 拒绝"
-    type: reject
-    udp: true
 
 # 锚点
-pr: &pr { type: select, proxies: [♻️ 自动选择], include-all: true }
+pr:
+  &pr {
+    type: select,
+    proxies: [🚀 节点选择, ♻️ 自动选择, REJECT],
+    include-all: true,
+  }
 # 策略组
 # https://wiki.metacubex.one/config/proxy-groups/
 proxy-groups:
@@ -139,7 +141,12 @@ proxy-groups:
       include-all: true,
       filter: '^[A-z]\+?\.(\[[0-3](\.\d+)?[xX倍]\]\.?)?[A-z]{2,}.*$',
     }
-  - { name: 🚀 节点选择, <<: *pr }
+  - {
+      name: 🚀 节点选择,
+      type: select,
+      proxies: [♻️ 自动选择, REJECT],
+      include-all: true,
+    }
   - { name: 🌍 国外媒体, <<: *pr }
   - { name: 📲 社交软件, <<: *pr }
   - { name: 🤖 ChatGPT, <<: *pr }
@@ -149,12 +156,12 @@ proxy-groups:
   - { name: 🎮 游戏论坛, <<: *pr }
   - { name: 🎮 游戏代理, <<: *pr }
   - { name: 🧱 砖块代理, <<: *pr }
-  - { name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择] }
+  - { name: 🎯 全球直连, type: select, proxies: [🟢 直连, REJECT, 🚀 节点选择] }
 rules:
   - RULE-SET,owngame,🎮 游戏代理
   - RULE-SET,owngamecom,🎮 游戏论坛
   - RULE-SET,own,🧱 砖块代理
-  - RULE-SET,ownban,🚫 拒绝
+  - RULE-SET,ownban,REJECT
   - RULE-SET,owndirect,🟢 直连
   - RULE-SET,ownmedia,🌍 国外媒体
   - RULE-SET,ownproxy,🚀 节点选择
