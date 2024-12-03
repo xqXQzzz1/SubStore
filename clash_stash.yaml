@@ -108,19 +108,12 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   nameserver-policy:
-    "rule-set:private_domain,cn_domain":
-      - 223.5.5.5
-      - 119.29.29.29
-    "rule-set:geolocation-!cn":
-      - "https://dns.cloudflare.com/dns-query"
-      - "https://dns.google/dns-query"
+    "rule-set:private_domain,cn_domain": 223.5.5.5
+    "rule-set:geolocation-!cn": "https://dns.cloudflare.com/dns-query"
 
 proxies:
   - name: "🟢 直连"
     type: direct
-    udp: true
-  - name: "🚫 拒绝"
-    type: reject
     udp: true
 
 # 锚点
@@ -154,7 +147,7 @@ rules:
   - RULE-SET,owngame,🎮 游戏代理
   - RULE-SET,owngamecom,🎮 游戏论坛
   - RULE-SET,own,🧱 砖块代理
-  - RULE-SET,ownban,🚫 拒绝
+  - RULE-SET,ownban,REJECT
   - RULE-SET,owndirect,🟢 直连
   - RULE-SET,ownmedia,🌍 国外媒体
   - RULE-SET,ownproxy,🚀 节点选择
