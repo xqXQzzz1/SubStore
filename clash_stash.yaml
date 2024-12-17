@@ -151,6 +151,7 @@ proxy-groups:
   - { name: Ⓜ️ 微软服务, <<: *pr }
   - { name: 🎮 游戏论坛, <<: *pr }
   - { name: 🎮 游戏代理, <<: *pr }
+  - { name: 🍎 Apple, <<: *pr }
   - { name: 🧱 砖块代理, <<: *pr }
   - { name: 🎯 全球直连, type: select, proxies: [🟢 直连, REJECT, 🚀 节点选择] }
 rules:
@@ -169,6 +170,7 @@ rules:
   - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT
   - RULE-SET,BardAI_No_Resolve,🤖 ChatGPT
   - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,Apple,🍎 Apple
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,Porn,🌍 国外媒体
@@ -348,4 +350,9 @@ rule-providers:
     {
       <<: *class,
       url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_No_Resolve.yaml",
+    }
+  Apple:
+    {
+      <<: *class,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml",
     }
