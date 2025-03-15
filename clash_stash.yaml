@@ -18,7 +18,7 @@ global-ua: clash.meta
 # socks-port: 7891
 # redir-port: 7892
 mixed-port: 7890
-# tproxy-port: 7894
+tproxy-port: 7894
 ipv6: false
 allow-lan: true
 unified-delay: true
@@ -71,9 +71,8 @@ sniffer:
 
 # 代理模式
 tun:
-  enable: false
+  enable: true
   stack: mixed
-  mtu: 9000
   dns-hijack:
     - "any:53"
     - "tcp://any:53"
