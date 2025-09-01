@@ -247,7 +247,7 @@ rule-providers:
   ai:
     {
       <<: *classt,
-      url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/AI.list",
+      url: "https://gcore.jsdelivr.net/gh/Coldvvater/Mononoke@refs/heads/master/Clash/Rules/AI.list",
     }
   Copilot_No_Resolve:
     {
