@@ -1,6 +1,15 @@
 # 机场订阅，名称不能重复
 proxy-providers:
-  Airport_01:
+  allGroups:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 43200
+    proxy: 🟢 直连
+    url: "oldurl"
+  autoGroups:
     type: http
     interval: 86400
     health-check:
@@ -121,8 +130,8 @@ proxies:
 pr:
   &pr {
     type: select,
-    proxies: [🚀 节点选择, ♻️ 自动选择, REJECT],
-    include-all: true,
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🟢 直连, REJECT],
+    use: [allGroups],
   }
 # 策略组
 # https://wiki.metacubex.one/config/proxy-groups/
@@ -132,17 +141,18 @@ proxy-groups:
       type: url-test,
       lazy: false,
       url: http://www.google.com/generate_204,
+      use: [autoGroups],
       interval: 3600,
       tolerance: 100,
       disable-udp: false,
-      include-all: true,
-      exclude-filter: '^.*([3-9]|\d{2,})(\.\d+)?[倍].*$',
+      # include-all: true,
+      # exclude-filter: '^.*([3-9]|\d{2,})(\.\d+)?[倍].*$',
     }
   - {
       name: 🚀 节点选择,
       type: select,
-      proxies: [♻️ 自动选择, REJECT],
-      include-all: true,
+      proxies: [♻️ 自动选择, REJECT, 🟢 直连],
+      use: [allGroups],
     }
   - { name: 🌍 国外媒体, <<: *pr }
   - { name: 📲 社交软件, <<: *pr }
