@@ -136,7 +136,7 @@ proxy-groups:
       tolerance: 100,
       disable-udp: false,
       include-all: true,
-      filter: '^(\[\w+\])?[A-z]\+?\.(\[[0-3](\.\d+)?[xX倍]\]\.?)?[A-z]{2,}.*$',
+      exclude-filter: '^.*([3-9]|\d{2,})(\.\d+)?[倍].*$',
     }
   - {
       name: 🚀 节点选择,
