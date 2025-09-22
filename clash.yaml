@@ -193,9 +193,8 @@ rules:
   - RULE-SET,Facebook_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,telegram_ip,📲 社交软件,no-resolve
   - RULE-SET,Proxy_Classical,🚀 节点选择,no-resolve
-  - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,geolocation-!cn,🚀 节点选择,no-resolve
   - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 rule-anchor:
   ip: &ip { type: http, interval: 86400, behavior: ipcidr, format: mrs }
