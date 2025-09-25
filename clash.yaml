@@ -123,7 +123,6 @@ dns:
 proxies:
   - name: "🟢 直连"
     type: direct
-    udp: true
 
 # 锚点
 pr:
@@ -131,6 +130,7 @@ pr:
     type: select,
     proxies: [🚀 节点选择, ♻️ 自动选择, 🟢 直连, REJECT],
     use: [allGroups],
+    disable-udp: false,
   }
 # 策略组
 # https://wiki.metacubex.one/config/proxy-groups/
@@ -163,7 +163,12 @@ proxy-groups:
   - { name: 🎮 游戏代理, <<: *pr }
   - { name: 🍎 Apple, <<: *pr }
   - { name: 🧱 砖块代理, <<: *pr }
-  - { name: 🎯 全球直连, type: select, proxies: [🟢 直连, REJECT, 🚀 节点选择] }
+  - {
+      name: 🎯 全球直连,
+      type: select,
+      proxies: [🟢 直连, REJECT, 🚀 节点选择],
+      disable-udp: false,
+    }
 rules:
   - RULE-SET,owngame,🎮 游戏代理,no-resolve
   - RULE-SET,owngamecom,🎮 游戏论坛,no-resolve
