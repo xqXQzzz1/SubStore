@@ -183,16 +183,16 @@ rules:
   - RULE-SET,Apple,🍎 Apple,no-resolve
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘,no-resolve
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务,no-resolve
+  - RULE-SET,netflix_ip,🌍 国外媒体,no-resolve
   - RULE-SET,Porn,🌍 国外媒体,no-resolve
   - RULE-SET,TikTok_No_Resolve,🌍 国外媒体,no-resolve
   - RULE-SET,GlobalMedia_Classical_No_Resolve,🌍 国外媒体,no-resolve
-  - RULE-SET,netflix_ip,🌍 国外媒体,no-resolve,no-resolve
   - RULE-SET,Telegram_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,Twitter_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,Instagram_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,Facebook_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,telegram_ip,📲 社交软件,no-resolve
-  - RULE-SET,Proxy_Classical,🚀 节点选择,no-resolve
+  - RULE-SET,Global_Classical,🚀 节点选择,no-resolve
   - RULE-SET,geolocation-!cn,🚀 节点选择,no-resolve
   - RULE-SET,cn_domain,🎯 全球直连
   - MATCH,🐟 漏网之鱼
@@ -280,11 +280,6 @@ rule-providers:
       <<: *class,
       url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Steam/Steam_No_Resolve.yaml",
     }
-  Steam:
-    {
-      <<: *class,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
-    }
   OneDrive_No_Resolve:
     {
       <<: *class,
@@ -320,10 +315,10 @@ rule-providers:
       <<: *class,
       url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Facebook/Facebook_No_Resolve.yaml",
     }
-  Proxy_Classical:
+  Global_Classical:
     {
       <<: *class,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Classical.yaml",
+      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml",
     }
   geolocation-!cn:
     {
