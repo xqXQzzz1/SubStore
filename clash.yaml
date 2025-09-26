@@ -170,24 +170,24 @@ proxy-groups:
       disable-udp: false,
     }
 rules:
-  - RULE-SET,owngame,🎮 游戏代理
-  - RULE-SET,owngamecom,🎮 游戏论坛
-  - RULE-SET,own,🧱 砖块代理
-  - RULE-SET,ownban,REJECT
-  - RULE-SET,owndirect,🟢 直连
-  - RULE-SET,ownmedia,🌍 国外媒体
-  - RULE-SET,ownproxy,🚀 节点选择
-  - RULE-SET,private_domain,🟢 直连,
-  - RULE-SET,SteamCN_No_Resolve,🟢 直连
-  - RULE-SET,GameDownloadCN_No_Resolve,🟢 直连
-  - RULE-SET,Steam_No_Resolve,🎮 游戏论坛
-  - RULE-SET,Epic_No_Resolve,🎮 游戏论坛
-  - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT
-  - RULE-SET,BardAI_No_Resolve,🤖 ChatGPT
-  - RULE-SET,ai,🤖 ChatGPT
-  - RULE-SET,Apple,🍎 Apple
-  - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘
-  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
+  - RULE-SET,owngame,🎮 游戏代理,no-resolve
+  - RULE-SET,owngamecom,🎮 游戏论坛,no-resolve
+  - RULE-SET,own,🧱 砖块代理,no-resolve
+  - RULE-SET,ownban,REJECT,no-resolve
+  - RULE-SET,owndirect,🟢 直连,no-resolve
+  - RULE-SET,ownmedia,🌍 国外媒体,no-resolve
+  - RULE-SET,ownproxy,🚀 节点选择,no-resolve
+  - RULE-SET,private_domain,🟢 直连,,no-resolve
+  - RULE-SET,SteamCN_No_Resolve,🟢 直连,no-resolve
+  - RULE-SET,GameDownloadCN_No_Resolve,🟢 直连,no-resolve
+  - RULE-SET,Steam_No_Resolve,🎮 游戏论坛,no-resolve
+  - RULE-SET,Epic_No_Resolve,🎮 游戏论坛,no-resolve
+  - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT,no-resolve
+  - RULE-SET,BardAI_No_Resolve,🤖 ChatGPT,no-resolve
+  - RULE-SET,ai,🤖 ChatGPT,no-resolve
+  - RULE-SET,Apple,🍎 Apple,no-resolve
+  - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘,no-resolve
+  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务,no-resolve
   - RULE-SET,netflix_ip,🌍 国外媒体,no-resolve
   - RULE-SET,Porn,🌍 国外媒体,no-resolve
   - RULE-SET,TikTok_No_Resolve,🌍 国外媒体,no-resolve
