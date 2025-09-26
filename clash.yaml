@@ -197,8 +197,8 @@ rules:
   - RULE-SET,Instagram_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,Facebook_No_Resolve,📲 社交软件,no-resolve
   - RULE-SET,telegram_ip,📲 社交软件,no-resolve
-  - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,Global_Classical_No_Resolve,🚀 节点选择
+  - RULE-SET,geolocation-!cn,🚀 节点选择,no-resolve
+  - RULE-SET,Global_Classical_No_Resolve,🚀 节点选择,no-resolve
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
