@@ -182,12 +182,12 @@ rules:
   - RULE-SET,GameDownloadCN_No_Resolve,🟢 直连,no-resolve
   - RULE-SET,Steam_No_Resolve,🎮 游戏论坛,no-resolve
   - RULE-SET,Epic_No_Resolve,🎮 游戏论坛,no-resolve
-  - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT,no-resolve
   - RULE-SET,BardAI_No_Resolve,🤖 ChatGPT,no-resolve
   - RULE-SET,ai,🤖 ChatGPT,no-resolve
   - RULE-SET,Apple,🍎 Apple,no-resolve
   - RULE-SET,OneDrive_No_Resolve,Ⓜ️ 微软云盘,no-resolve
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务,no-resolve
+  - RULE-SET,Copilot_No_Resolve,🤖 ChatGPT,no-resolve
   - RULE-SET,netflix_ip,🌍 国外媒体,no-resolve
   - RULE-SET,Porn,🌍 国外媒体,no-resolve
   - RULE-SET,TikTok_No_Resolve,🌍 国外媒体,no-resolve
